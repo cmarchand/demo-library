@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>top.marchand.xml.libraries</groupId>
   <artifactId>demo</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.1</version>
   
   <name>Demo Xsl library</name>
   <description>A simple library, to show how to include a foreign XSL</description>
