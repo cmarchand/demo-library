@@ -9,32 +9,29 @@
     <xd:desc>
       <xd:p><xd:b>Created on:</xd:b> Nov 23, 2017</xd:p>
       <xd:p><xd:b>Author:</xd:b> cmarchand</xd:p>
-      <xd:p></xd:p>
+      <xd:p>A simple demo XSL that uppercases all elements names</xd:p>
     </xd:desc>
   </xd:doc>
   
 
+  <xd:doc>
+    <xd:desc>
+      <xd:p>Copies attributes</xd:p>
+    </xd:desc>
+  </xd:doc>
   <xsl:template match="@*">
     <xsl:copy-of select="."/>
   </xsl:template>
   
   <xd:doc>
-    <xd:desc/>
+    <xd:desc>
+      <xd:p>Copies element, changing its name by its upper-cased name</xd:p>
+    </xd:desc>
   </xd:doc>
   <xsl:template match="*">
-    <xsl:variable name="prefix" as="xs:string" select="if(contains(name(.),':')) then concat(substring-before(name(.),':'),':') else ''"/>
-    <xsl:message>prefix is <xsl:value-of select="$prefix"/>.</xsl:message>
-    <xsl:variable name="elementName" as="xs:string" select="concat($prefix,upper-case(local-name(.)))"/>
-    <xsl:message>elementName is <xsl:value-of select="$elementName"/>.</xsl:message>
-    <xsl:element name="{$elementName}">
+    <xsl:element name="{upper-case(local-name())}" namespace="{namespace-uri(.)}">
       <xsl:apply-templates select="node()|@*"/>
     </xsl:element>
   </xsl:template>
-  
-  <!--xsl:template match="node() | @*">
-    <xsl:copy>
-      <xsl:apply-templates select="node() | @*"/>
-    </xsl:copy>
-  </xsl:template-->
   
 </xsl:stylesheet>

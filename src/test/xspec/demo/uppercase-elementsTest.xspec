@@ -4,7 +4,7 @@
   xmlns:pfx="top:marchand:xml:library:demo"
   stylesheet="../../../main/xsl/demo/uppercase-elements.xsl">
   
-  <x:scenario label="no namespace element" pending="sdfgsdfg" >
+  <x:scenario label="no namespace element">
     <x:context>
       <foe>data</foe>
     </x:context>
