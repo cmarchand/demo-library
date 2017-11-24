@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x:description 
+  xmlns:x="http://www.jenitennison.com/xslt/xspec"
+  xmlns:pfx="top:marchand:xml:library:demo"
+  stylesheet="../../../main/xsl/demo/uppercase-elements.xsl">
+  
+  <x:scenario label="no namespace element" pending="sdfgsdfg" >
+    <x:context>
+      <foe>data</foe>
+    </x:context>
+    <x:expect label="uppercased element name">
+      <FOE>data</FOE>
+    </x:expect>
+  </x:scenario>
+  
+  <x:scenario label="prefixed element name">
+    <x:context>
+      <pfx:bar>content</pfx:bar>
+    </x:context>
+    <x:expect label="prefix lowercase, element uppercase">
+      <pfx:BAR>content</pfx:BAR>
+    </x:expect>
+  </x:scenario>
+</x:description>
